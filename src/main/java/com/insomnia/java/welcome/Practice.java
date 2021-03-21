@@ -20,7 +20,103 @@ public class Practice
 		displayFiveMassage(CirculationModle.FOR);
 		displayPatternWithJava();
 		displayArithmeticTable();
-		ComputerExpression();
+		computerExpression();
+		circleAreaCalculate(5.0);
+		circumferenceCalculate(5.0);
+		rectangleAreaCalculate(5.0, 10.0);
+		rectanglePerimeterCalculate(5.0, 10.0);
+		speedCalculateByMeter(45.5, 14000);
+		speedCalculateByKiloMeter(45.5, 14);
+		populationCalculaterWithAfterYear(5, 312032486);
+
+	}
+
+	/**
+	 * 计算未来 5 年的人口增长情况 每 7 秒有一个人诞生 每13 秒有一个人死亡 每 45 秒 有一个人迁移
+	 * 
+	 * @param year
+	 */
+
+	private static void populationCalculaterWithAfterYear(int year, int population)
+	{
+		
+		double second = 365 * 24 * 60 * 60;
+		double subsist = second / 7.0;
+		double death = second / 13.0;
+		double migrate = second / 45.0;
+
+
+		for (int i = 0; i < year; i++)
+		{
+			population += subsist - death + migrate;
+			logger.info(i + 1 + " year population num is " + population);
+		}
+
+	}
+
+	/**
+	 * 以英里计算平均速度 每小时多少英里 1英里 = 1.6 千米
+	 * 
+	 * @param minute 分钟
+	 * @param meter  米
+	 */
+	private static void speedCalculateByMeter(double minute, double meter)
+	{
+		logger.info("Speed is " + meter / minute * 60 / 1600);
+	}
+
+	/**
+	 * 以英里计算平均速度 每小时多少英里 1英里 = 1.6 千米
+	 * 
+	 * @param minute    分钟
+	 * @param kilometer 千米
+	 */
+	private static void speedCalculateByKiloMeter(double minute, double kilometer)
+	{
+		logger.info("Speed is " + kilometer / minute * 60 / 1.6);
+	}
+
+	/**
+	 * 计算长方形周长
+	 * 
+	 * @param length 长
+	 * @param width  宽
+	 */
+	private static void rectanglePerimeterCalculate(double length, double width)
+	{
+		logger.info("rectangle Perimenter is " + 2 * (length + width));
+	}
+
+	/**
+	 * 长方形面积
+	 * 
+	 * @param length 长
+	 * @param width  宽
+	 */
+	private static void rectangleAreaCalculate(double length, double width)
+
+	{
+		logger.info("rectangel Area is " + length * width);
+	}
+
+	/**
+	 * 计算圆的周长 2 * PI * radius
+	 * 
+	 * @param radius 半径
+	 */
+	private static void circumferenceCalculate(double radius)
+	{
+		logger.info("circle circumference is " + 2 * Math.PI * radius);
+	}
+
+	/**
+	 * 计算圆的面积 半径 * 半径 * PI
+	 * 
+	 * @param radius 半径
+	 */
+	private static void circleAreaCalculate(double radius)
+	{
+		logger.info("circle Area is " + Math.PI * Math.pow(radius, 2));
 	}
 
 
@@ -29,7 +125,7 @@ public class Practice
 	 * 数列求和 
 	 * 求 🥧 的近似值
 	 */
-	private static void ComputerExpression()
+	private static void computerExpression()
 	{
 
 		// 算出 (9.5 * 4.5 - 2.5 * 3) / 45.5 - 3.5 的结果
