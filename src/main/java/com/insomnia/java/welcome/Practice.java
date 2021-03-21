@@ -20,16 +20,22 @@ public class Practice
 		displayFiveMassage(CirculationModle.FOR);
 		displayPatternWithJava();
 		displayArithmeticTable();
-		ComputerExperssion();
+		ComputerExpression();
 	}
+
 
 	/**
 	 * 算出 (9.5 * 4.5 - 2.5 * 3) / 45.5 - 3.5 的结果
+	 * 数列求和 
+	 * 求 🥧 的近似值
 	 */
-	private static void ComputerExperssion()
+	private static void ComputerExpression()
 	{
+
+		// 算出 (9.5 * 4.5 - 2.5 * 3) / 45.5 - 3.5 的结果
 		logger.info("(9.5 * 4.5 - 2.5 * 3) / (45.5 - 3.5) =" + ((9.5 * 4.5 - 2.5 * 3) / (45.5 - 3.5)));
 
+		// 数列求和
 		int sum = 0;
 		int i = 0;
 		for (i = 0; i < 10; i++)
@@ -39,10 +45,45 @@ public class Practice
 
 		logger.info("1 + 2 + 3 + ... + 9  = " + sum);
 
+		int flag = 0;
+		double PI;
+		double var = 1.0;
+		// 求 🥧 的近似值
+		// 🥧 = 4 * (1- (1 / 3) + (1 / 5) - (1 / 7) ... + (1 / 13))
+		for (i = 0; i < 14; i++)
+		{
+
+			if (1 == i)
+			{
+				continue;
+			}
+			if (0 == i % 2)
+			{
+				continue;
+			}
+
+			if (0 == flag % 2)
+			{
+				logger.info("var  = " + var + " - " + "( 1 / " + i + ")");
+				var -= (1.0 / i);
+				logger.info("var = " + var);
+				flag++;
+				continue;
+			}
+			logger.info("var  = " + var + " + " + "( 1 / " + i + ")");
+			var += (1.0 / i);
+			logger.info("var = " + var);
+			flag++;
+
+		}
+
+		PI = 4 * var;
+		logger.info("PI = 4 * " + var + " = " + PI);
+
 	}
 
 	/**
-	 * 显示算术结果 Math.pow(var1,var2) 算出 var1 的 var2 次方
+	 * 1. 显示算术结果 Math.pow(var1,var2) 算出 var1 的 var2 次方 
 	 */
 
 	private static void displayArithmeticTable()

@@ -5,7 +5,7 @@ package com.insomnia.java.welcome;
  * @date 2021年3月20日 下午10:37:33
  * 
  */
-public class ComputerExperssion
+public class ComputerExpression
 {
 
 	public static void main(String[] args)
