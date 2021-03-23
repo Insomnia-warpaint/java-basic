@@ -26,9 +26,9 @@ public class Practice
 		rectangleAreaCalculate(5.0, 10.0);
 		rectanglePerimeterCalculate(5.0, 10.0);
 		speedCalculateByMeter(45.5, 14000);
-		speedCalculateByKiloMeter(45.5, 14);
+		speedCalculateByMile(100.35, 24);
 		populationCalculaterWithAfterYear(5, 312032486);
-
+		System.out.println(1 / 1.6);
 	}
 
 	/**
@@ -55,26 +55,28 @@ public class Practice
 	}
 
 	/**
-	 * 以英里计算平均速度 每小时多少英里 1英里 = 1.6 千米
+	 * 以千米计算平均速度 每小时多少英里 1英里 = 1.6 千米 假设一个跑步者 一小时 四十分 三十五秒 跑了 二十四英里- , 求每小时多小千米
+	 * 
+	 * @param minute 分钟
+	 * @param mile   英里
+	 */
+	private static void speedCalculateByMile(double minute, double mile)
+	{
+		logger.info("Speed is " + (mile / minute * 60) * (1 - 0.6) + " km");
+	}
+
+	/**
+	 * 以千米计算平均速度 每小时多少英里 1英里 = 1.6 千米 假设一个跑步者 一小时 四十分 三十五秒 跑了 二十四千米 , 求每小时多小英里
 	 * 
 	 * @param minute 分钟
 	 * @param meter  米
 	 */
+
 	private static void speedCalculateByMeter(double minute, double meter)
 	{
-		logger.info("Speed is " + meter / minute * 60 / 1600);
+		logger.info("Speed is " + (meter / minute * 60) * (1 + 0.6) + " m");
 	}
 
-	/**
-	 * 以英里计算平均速度 每小时多少英里 1英里 = 1.6 千米
-	 * 
-	 * @param minute    分钟
-	 * @param kilometer 千米
-	 */
-	private static void speedCalculateByKiloMeter(double minute, double kilometer)
-	{
-		logger.info("Speed is " + kilometer / minute * 60 / 1.6);
-	}
 
 	/**
 	 * 计算长方形周长
