@@ -5,11 +5,13 @@ package com.insomnia.java.scanner;
  * 
  */
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.insomnia.java.enmu.Week;
 import com.insomnia.java.util.ScannerUtils;
 
 public class Practice
@@ -22,6 +24,56 @@ public class Practice
 		inputDataType();
 		circulationRemainder();
 		displayWeek(150, 2);
+		Week[] values = Week.values();
+		for (int i = 0; i < values.length; i++)
+		{
+			System.out.println(values[i].getWeekName());
+			System.out.println(values[i].getWeekDay());
+
+		}
+
+		showCurrentTime();
+	}
+
+	/**
+	 * 显示当前时间
+	 */
+	private static void showCurrentTime()
+	{
+		// 获取毫秒
+		long totalMilliseconds = System.currentTimeMillis();
+		logger.info(totalMilliseconds);
+
+		// 获取秒数
+		long totalSeconds = totalMilliseconds / 1000;
+		logger.info(totalSeconds);
+		// 获取当前多少秒
+		long currentSeconds = totalSeconds % 60;
+		logger.info(currentSeconds);
+		// 获取分钟数
+		long totalMinutes = totalSeconds / 60;
+		logger.info(totalMinutes);
+		// 获取当前多少分钟
+		long currentMinutes = totalMinutes % 60;
+		logger.info(currentMinutes);
+		// 获取小时数
+		long totalHours = totalMinutes / 60;
+		logger.info(totalHours);
+		// 获取当前多少小时
+		// 当前电脑在中国 , 和 格林威治 实现相差 8 个 小时
+		long currentHours = (totalHours % 24) + 8;
+
+		logger.info(currentHours);
+		if (24 < currentHours)
+		{
+			currentHours = currentHours % 24;
+		}
+
+		logger.info("Current time is " + currentHours + " : " + currentMinutes + " : " + currentSeconds + " CST");
+
+		Calendar calendar = Calendar.getInstance();
+		logger.info(calendar.getTime());
+
 	}
 
 	// 今天星期二 , 100 天后星期几
