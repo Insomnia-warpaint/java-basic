@@ -28,6 +28,29 @@ public class ComputeLoan
 	public static void main(String[] args)
 	{
 		Scanner input = ScannerUtils.getSystemInputStream();
+		//输入年利率
+		logger.info("Enter annual interest rate, e.g ,5.75: ");
+		double annualInterestRate = input.nextDouble();
+		//转换成月利率
+		double monthlyInterestRate = annualInterestRate / 1200;
 
+		//输入支付了多少年
+		logger.info("Enter number of years as an integer, e.g. , 5: ");
+		int numberOfYears = input.nextInt();
+
+		//输入贷款总金额
+		logger.info("Enter loan mount , e.g, 120000.95");
+		double loadAmount = input.nextDouble();
+		
+		// calculation payment 按照上面的公式 计算 月支付额度
+		double monthlyPayment = loadAmount * monthlyInterestRate / 1 / (1 - (1 / Math.pow(
+				(1 + monthlyInterestRate), numberOfYears * 12
+		)));
+
+		// 总支付额度 = 月支付额度 * 12 * 支付的年数
+		double totalPayment = monthlyPayment * numberOfYears * 12;
+
+		logger.info("The monthly payment is $" + (int) monthlyPayment);
+		logger.info("The total payment is $" + (int) totalPayment);
 	}
 }
