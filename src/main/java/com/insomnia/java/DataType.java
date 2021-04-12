@@ -8,7 +8,9 @@ package com.insomnia.java;
 public enum DataType
 {
 
-
+	/**
+	 * 基本数据类型
+	 */
 	BYTE("byte"), SHORT("short"), INT("int"), LONG("long"), FLOAT("float"), DOUBLE("double");
 
 
