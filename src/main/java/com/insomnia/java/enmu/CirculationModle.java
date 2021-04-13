@@ -7,5 +7,8 @@ package com.insomnia.java.enmu;
  */
 public enum CirculationModle
 {
+	/**
+	 * 循环条件
+	 */
 	FOR, WHILE, DO_WHILE;
 }

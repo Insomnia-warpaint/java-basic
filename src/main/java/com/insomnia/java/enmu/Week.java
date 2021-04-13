@@ -6,6 +6,9 @@ package com.insomnia.java.enmu;
  */
 public enum Week
 {
+	/**
+	 *
+	 */
 	SUNDAY("SunDay", 0), MONDAY("Monday", 1), TUESDAY("Tuesday", 2), WEDNESDAY("WednesDay", 3), THURSDAY("ThursDay", 4),
 	FRIDAY("Friday", 5), SATURDAY("Saturday", 6);
 
