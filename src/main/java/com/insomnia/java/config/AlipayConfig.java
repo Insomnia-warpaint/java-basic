@@ -1,0 +1,21 @@
+package com.insomnia.java.config;
+
+/**
+ * @author insomnia
+ */
+public class AlipayConfig {
+
+
+    public static final String APP_ID = "2021000117638829";
+    public static final String MERCHANT_ID = "2088621955578602";
+    public static final String NOTIFY_URL = "https://www.baidu.com";
+    public static final String RETURN_URL = "https://www.baidu.com";
+    public static final String CHARSET = "UTF-8";
+    public static final String FORMAT = "json";
+    public static final String SIGN_TYPE = "RSA2";
+    public static final String ALIPAY_URL = "https://openapi.alipaydev.com/gateway.do";
+    public static final String APP_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjpAopnnE5nC8c7qI9eByjsPLD8lQa1QVb9+PmXeWZz+GAZSYKRqznoN2OTRo8oUafWpY1uNVs/FDouY9+UqRMaZ47UYtpvADKLKffwMH18mWcp8YAWGKeTbkaYaOp3jQACkVDojskBux0Pq50hduKoLfIUW0h8tcnzmzvrQKVnyvivgMPda/wzwBcLeNxlhastUjVr/b9t6CxJZsBek/dbQ/+ZXjIp3pHOsra7ij4Qn0rOLgCO/FGjs8K1keeSF6OxylONtQ16d1ssEsgXk1NiI1kudZpuRJ6zyR+RS1mXxOGYHiWFZZJjG6f16cpgGxxj8br1wtTbgtZYAWU2fn5wIDAQAB";
+    public static final String ALIPAY_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgCDKYeXIdUK1FgH5/RK5d5jZvY2X2imODVqA79zcxDAqxgX6PeMqxE8NHwWSfmv0ER2Y1uuA5TfdXNvGpmgB+f4atXBWolQVZiKuF494pFG21fJ/oyUJg/BjFmt7gyliS3x1+fjy1We0lhBq5wa9Er7kMgATcy1IFoxvi74QMwudPcrmNZkkqWUaghgIUNoLA/KutwP8Q7n/SUt/G/2lg7P9GkYUTrcrAyUSog51719u2IbN89dnZSZsXAolOtQ3AvDegxKxzRRbqX7zmQ0rUzS1QsU1mROU+dE6pO1FQK7L4OzSPPW1dYUOx2zPbe01BhQLQo1JqbzcWVOjri8yPwIDAQAB";
+    public static final String APP_PRIVATE_KEY = "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2hQJIVktNJSxeK4cDT9AdvUT/7VPxRrtuVExv1AHHzeg9QhphgqLFE5mBXzC4zXnLekmOjH6iCjtILIhEux26Yhx8FkCE4nFgw/5tM0uaFS5c0HAxNhjRlw/lNaPp21+KGaw/1ybtHX1CEVGfbxRT6wJOVobOjAbjhoUzCgSAZ8vN7o7BNdF7NizmyvArA0qUf+RjtJx/fz4iUOETY8MBKL9pEAU0PVzVA/r4w3ZaVgRPx2UAs0ltFQT/Pjw9fd/ns+d3mxU5MwYeG33/9w782D6Y0gueu7K6AFvZ8WhgPOD2pqsiMFPiXqza4QkJnzTwthhwXSvQ/vzZ3FOvEDM7AgMBAAECggEAeMjoy8ofpvvUsrUHcg+dYDDiuqLqDB+M5eRveQnJ69m9uNxH7QOwh88CpPTDn2iLEzbn+qfLHZy7wnWF8EYL1E4dH5jyNX5NHYZWlxl9DIi717wwosB0CC9522t1/8qnHRMERHMzVXNQcypW47V0tFwveHwWVhWgcW2SNEaK2BW5DW/xupjF6puE6p23D3HHHrBmp49VGYdoYrshERsCqB8dE1RuV9Pnnamh7TlOtscYstQw+8xWPxElxX1uiY5OBQ61sHMfqrnQ6vceXO1vH0aIwNK0vwrug0Ua/6vIH9t0rp3/eSDtadiISD3YH2O3k0uEDBqkJnkDu18JowcsEQKBgQDtphpvVF583eUr7UQjNttp//1XtCfZxHtuIGrvElc28MjoW754soPjG5jNVhtZIdDm1l0EPjiBrDDt/PNgxGzhOBa8VEhhD+VBOlMnkRT/AVCZ19v+9Tx+xbqC9JaksYByZXt/h6eltxpkeGH3fr32t3CMRJrQtLUSKe1TZ3CrtwKBgQDEnRj3Bh6Ss+dKD6Vp9Wn78Th2d90mybiu+aAhIT3rL2Z6uzD6zZKdi17I9zkn1VUI6+krRP4FRmDPFjN1d+2XzkSrvTahPPmBGTy4HFdHJRxI/oSE/vhIHdqL4n43mhQ/whwbKfSOCr5BXia2/OKwfnTnIj1v/NgWga/0Twg8nQKBgDEwaVZT0z7rOu0triXPy/iTyN9nZbw4ZAf2Y8vaMv0nN56IptMauBvA8Y7G3OBFFJVDF3uyWUXV20bXTZTg81xmnKYcl+KnRJ+Mr/uHlx31Kra9LEcIgZ4H1UQX1jp+lwSWpspNzNCLJsZW+IgezrkLXRtbc+PxE22QChRyW6rfAoGBAK/gnBF1Xun6lp6QqnbDewBNwyVuid0Fu/iCArVAKER3DWQiiWkBdfMKVkrNpEo2sq+dYOI9AEK1tynogTXGhzox4QoD45eOlN7gNYm4iHZzAv9k9iSGdJEGa5aQkDmq0gxK1puSB1r8zz5oO5ebViltpaOQ5IaGFsLjVgPkosidAoGBAMd3RqAI683sM/6auafaA/kFnIRadjODQLNXcU0JaysFSFuvDE5AQ55EZWsyOWzMRo9xl5lBGuODjFi+ONzNwNoZFf6fcCuoXVHr4VbA4OF7MZgk+/sA7jQRc9/Olmh6HrU+W82ttM5YTnEapsMmeXRdeFDJN7RgiRHVLniyVP2c";
+
+}
