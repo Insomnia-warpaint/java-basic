@@ -2,10 +2,13 @@ package com.insomnia.java.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.insomnia.java.util.JDBCUtils;
 
 public class StudentDao implements BaseDao
 {
@@ -20,9 +23,11 @@ public class StudentDao implements BaseDao
 
 
 	@Override
-	public <T> boolean save(T o)
+	public <T> boolean save(String sql ,T o) throws SQLException
 	{
-		// TODO Auto-generated method stub
+		connection = JDBCUtils.openConnection();
+		prepared = connection.prepareStatement(sql);
+
 		return false;
 	}
 
@@ -46,4 +51,5 @@ public class StudentDao implements BaseDao
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

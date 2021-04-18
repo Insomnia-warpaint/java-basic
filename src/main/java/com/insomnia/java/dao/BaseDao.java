@@ -10,14 +10,14 @@ public interface BaseDao
 	 * @param o 对象
 	 * @return 成功 true 失败 false
 	 */
-	<T> boolean save(T o) throws SQLException;
+	<T> boolean save(String sql, T o) throws SQLException;
 	
 	/**
 	 * 删除信息
 	 * @param id 主键
 	 * @return 成功 true 失败 false
 	 */
-	boolean delete(Integer id);
+	boolean delete(Integer id) throws SQLException;
 	
 	/**
 	 * 修改信息
@@ -25,7 +25,7 @@ public interface BaseDao
 	 * @param o 对象
 	 * @return 成功 true 失败 false
 	 */
-	<T> boolean update(T o);
+	<T> boolean update(T o) throws SQLException;
 
 	/**
 	 * 
@@ -33,6 +33,6 @@ public interface BaseDao
 	 * @param id 主键
 	 * @return 查询结果
 	 */
-	<T> T select(Integer id);
+	<T> T select(Integer id) throws SQLException;
 
 }
