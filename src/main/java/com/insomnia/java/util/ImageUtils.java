@@ -1,18 +1,18 @@
 package com.insomnia.java.util;
 
-import com.insomnia.java.scanner.SalesTax;
-import net.coobird.thumbnailator.Thumbnailator;
-import net.coobird.thumbnailator.Thumbnails;
-import net.coobird.thumbnailator.util.ThumbnailatorUtils;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.awt.font.FontRenderContext;
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+import net.coobird.thumbnailator.Thumbnails;
 
 /**
  * @author insomnia
@@ -66,7 +66,9 @@ public class ImageUtils {
      * @param imageUrl 图片的网址
      * @param localPath 本地的写入路径
      */
-    public static void compressedPictures(String imageUrl , String localPath) throws IOException {
+	@SuppressWarnings("resource")
+	public static void compressedPictures(String imageUrl, String localPath) throws IOException
+	{
         if (!StringUtils.isNotEmpty(imageUrl)){
             logger.error("imageUrl 不能为空!");
             throw new IllegalArgumentException("imageUrl must not null");
@@ -77,7 +79,7 @@ public class ImageUtils {
             throw new IllegalArgumentException("localPath must not null");
         }
 
-        HttpURLConnection connection = HttpURLConnection(imageUrl);
+		HttpURLConnection connection = httpUrlConnection(imageUrl);
         // 获取输入流
         InputStream inputStream = connection.getInputStream();
 
@@ -190,7 +192,8 @@ public class ImageUtils {
      * @return  HttpURLConnection
      * @throws IOException
      */
-    private static HttpURLConnection HttpURLConnection(String path) throws IOException {
+	private static HttpURLConnection httpUrlConnection(String path) throws IOException
+	{
         // 创建 URL 对象
         URL url = new URL(path);
         // 开启连接

@@ -9,7 +9,7 @@ public class StringUtils {
 
     private static final String[] EMPTY_STRING_ARRAY = {};
     private static final String FOLDER_SEPARATOR = "/";
-    private static final String WINDOWS_FOLDER_SEPARATOR = "\\";
+	private static final String WINDOWS_FOLDER_SEPARATOR = "\\";
     private static final String TOP_PATH = "..";
     private static final String CURRENT_PATH = ".";
     private static final Character EXENTENT_SEPARATOR = '.';

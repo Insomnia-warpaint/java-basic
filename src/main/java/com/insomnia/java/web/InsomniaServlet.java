@@ -17,6 +17,10 @@ import org.apache.logging.log4j.Logger;
  */
 public class InsomniaServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6611180599581120260L;
 	private static Logger logger = LogManager.getLogger(InsomniaServlet.class);
 
 	@Override

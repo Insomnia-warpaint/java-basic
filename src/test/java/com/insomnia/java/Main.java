@@ -1,24 +1,57 @@
 package com.insomnia.java;
 
+import java.sql.SQLException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Test;
 
-/**
- * @author insomnia
- * @date 2021年3月23日 上午11:07:41
- * 
- */
+import com.insomnia.java.util.JDBCUtils;
+
 public class Main
 {
+	Logger logger = LogManager.getLogger(Main.class);
 
-	private static Logger logger = LogManager.getLogger(Main.class);
-	public static void main(String[] args)
+	@Test
+	public void testException()
 	{
-		float f = 12.6F;
-		int i = (int) f;
-		logger.info("f is " + f);
-		logger.info("i is " + i);
-		logger.info(4.5 / 100);
+		try
+		{
+			throw new NullPointerException("is null");
+		}
+		catch (Exception e)
+		{
+			logger.error("错误消息: {}", e.getMessage(), e);
+		}
 
 	}
+
+	@Test
+	public void DBConnection()
+	{
+		try
+		{
+			System.out.println(JDBCUtils.openConnection());
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void saveStudent()
+	{
+
+
+	}
+
+	@Test
+	public void deleteStudent()
+	{
+
+
+
+	}
+
 }
