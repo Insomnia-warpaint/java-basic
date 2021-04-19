@@ -1,5 +1,8 @@
 package com.insomnia.java.beans;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * 
  * @author insomnia
@@ -7,6 +10,10 @@ package com.insomnia.java.beans;
  */
 public class Student
 {
+	
+	private static final Logger logger = LogManager.getLogger(Student.class);
+	
+	public Character sequence;
 	/**
 	 * 学号 id 主键
 	 */
@@ -23,6 +30,29 @@ public class Student
 	 *  0 女 1 男
 	 */
 	private char gender;
+
+	public Student()
+	{
+
+	}
+	
+	@SuppressWarnings("unused")
+	private Student(Integer id, String name, Integer age)
+	{
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
+
+	public Student(Integer id, String name, Integer age, char gender)
+	{
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
 
 	public Integer getId()
 	{
@@ -62,6 +92,17 @@ public class Student
 	public void setGender(char gender)
 	{
 		this.gender = gender;
+	}
+	
+	protected void study()
+	{
+		logger.info("The quietly study");
+	}
+	
+	@SuppressWarnings("unused")
+	private void readingBook()
+	{
+		logger.info("reading design patterns");
 	}
 
 	@Override
@@ -118,6 +159,11 @@ public class Student
 		else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	
+	static enum Const
+	{
+		KNOWLEDGE
 	}
 
 }
