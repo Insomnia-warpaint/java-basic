@@ -13,13 +13,13 @@ public class Main
 	Logger logger = LogManager.getLogger(Main.class);
 
 	@Test
-	public void testException()
+	public void understandException()
 	{
 		try
 		{
 			throw new NullPointerException("is null");
 		}
-		catch (Exception e)
+		catch (NullPointerException e)
 		{
 			logger.error("错误消息: {}", e.getMessage(), e);
 		}
@@ -31,7 +31,7 @@ public class Main
 	{
 		try
 		{
-			System.out.println(JDBCUtils.openConnection());
+			logger.info(JDBCUtils.openConnection());
 		}
 		catch (SQLException e)
 		{
@@ -39,19 +39,25 @@ public class Main
 		}
 	}
 
+	/**
+	 * 
+	 * {@link java.util.Collections.indexedBinarySearch}
+	 * @see line 226
+	 */
 	@Test
-	public void saveStudent()
+	public void unSignedShift()
 	{
-
+		/**
+		 * 无符号右移动  5 >>> 1 like 5 / 2  =  2.5  = 2 ignore decimal point  5 >>> 2 like 5 / 2 = 2 then 2 / 2 = 1 
+		 */
+		logger.info((10 + 10) >>> 3);
 
 	}
-
-	@Test
-	public void deleteStudent()
-	{
-
-
-
+	
+	public void understandGetIteratorWithCollections(){
+		 
+		
 	}
+
 
 }
