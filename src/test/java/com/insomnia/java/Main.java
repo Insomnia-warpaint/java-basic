@@ -1,16 +1,18 @@
 package com.insomnia.java;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
+import com.insomnia.java.enmu.DBProvide;
 import com.insomnia.java.util.JDBCUtils;
 
 public class Main
 {
-	Logger logger = LogManager.getLogger(Main.class);
+	private static Logger logger = LogManager.getLogger(Main.class);
 
 	@Test
 	public void understandException()
@@ -31,7 +33,8 @@ public class Main
 	{
 		try
 		{
-			logger.info(JDBCUtils.openConnection());
+			Connection connection = new JDBCUtils.Build().buildConnection(DBProvide.ORACLE).build();
+			logger.info(connection);
 		}
 		catch (SQLException e)
 		{

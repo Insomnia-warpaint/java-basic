@@ -1,7 +1,7 @@
 package com.insomnia.java.design.factory;
 
-import org.apache.logging.log4j.Logger;
 
+import com.insomnia.java.logger.Logger;
 import com.insomnia.java.logger.LoggerFactory;
 
 public class Main

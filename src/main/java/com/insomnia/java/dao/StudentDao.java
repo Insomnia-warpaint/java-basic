@@ -8,6 +8,7 @@ import java.sql.Statement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.insomnia.java.enmu.DBProvide;
 import com.insomnia.java.util.JDBCUtils;
 
 public class StudentDao implements BaseDao
@@ -25,7 +26,7 @@ public class StudentDao implements BaseDao
 	@Override
 	public <T> boolean save(String sql ,T o) throws SQLException
 	{
-		connection = JDBCUtils.openConnection();
+		connection = new JDBCUtils.Build().buildConnection(DBProvide.MYSQL).build();
 		prepared = connection.prepareStatement(sql);
 
 		return false;
