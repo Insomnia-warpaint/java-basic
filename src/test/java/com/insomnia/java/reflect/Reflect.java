@@ -22,7 +22,7 @@ public class Reflect
 	@Test
 	public void getStudentInstanceByNewClass()
 	{
-		Student student = new Student(1, "liMing", 12, '1');
+		Student student = new Student(1, "liMing", 12, "1");
 		logger.info(student);
 	}
 

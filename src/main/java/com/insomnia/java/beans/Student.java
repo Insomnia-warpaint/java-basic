@@ -29,7 +29,7 @@ public class Student
 	/**
 	 *  0 女 1 男
 	 */
-	private char gender;
+	private String gender;
 
 	public Student()
 	{
@@ -45,7 +45,7 @@ public class Student
 		this.age = age;
 	}
 
-	public Student(Integer id, String name, Integer age, char gender)
+	public Student(Integer id, String name, Integer age, String gender)
 	{
 		super();
 		this.id = id;
@@ -84,12 +84,12 @@ public class Student
 		this.age = age;
 	}
 
-	public char getGender()
+	public String getGender()
 	{
 		return gender;
 	}
 
-	public void setGender(char gender)
+	public void setGender(String gender)
 	{
 		this.gender = gender;
 	}
@@ -117,7 +117,7 @@ public class Student
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((age == null) ? 0 : age.hashCode());
-		result = prime * result + gender;
+		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
