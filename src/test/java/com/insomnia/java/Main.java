@@ -3,6 +3,7 @@ package com.insomnia.java;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import com.insomnia.java.jdbc.DBConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -33,10 +34,20 @@ public class Main
 	{
 		try
 		{
-			Connection connection = new JDBCUtils.Build().buildConnection(DBProvide.ORACLE).build();
+			DBConnectionPool pool = DBConnectionPool.getInstance();
+
+
+			Connection connection = pool.getConnection();
+			System.out.println(pool.getNum());
+			System.out.println(pool.getNumActive());
+			pool.release();
+
+			System.out.println(pool.getNum());
+			System.out.println(pool.getNumActive());
+//			Connection connection = new JDBCUtils.Build().buildConnection(DBProvide.ORACLE).build();
 			logger.info(connection);
 		}
-		catch (SQLException e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
