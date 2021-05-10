@@ -1,4 +1,4 @@
-package com.insomnia.java.jdbc;
+package com.insomnia.java.design.jdbc;
 
 import com.insomnia.java.util.JDBCUtils;
 import com.insomnia.java.util.StringUtils;
@@ -19,7 +19,7 @@ import java.util.Vector;
 /**
  *
  */
-public class DBConnectionPool extends Pool{
+public class DBConnectionPool extends Pool {
 
     private static final Logger LOG = LogManager.getLogger(DBConnectionPool.class);
     /**
@@ -53,7 +53,7 @@ public class DBConnectionPool extends Pool{
 
     public static synchronized DBConnectionPool getInstance() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         if (null == pool){
-            Constructor<DBConnectionPool> constructor = (Constructor<DBConnectionPool>) Class.forName("com.insomnia.java.jdbc.DBConnectionPool").getDeclaredConstructor();
+            Constructor<DBConnectionPool> constructor = (Constructor<DBConnectionPool>) Class.forName("com.insomnia.java.design.jdbc.DBConnectionPool").getDeclaredConstructor();
             constructor.setAccessible(true);
             pool = constructor.newInstance();
         }

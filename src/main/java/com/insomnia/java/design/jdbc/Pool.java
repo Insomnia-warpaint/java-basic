@@ -1,4 +1,4 @@
-package com.insomnia.java.jdbc;
+package com.insomnia.java.design.jdbc;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +13,9 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * 抽象工厂模式  抽象 jdbc 连接池
+ */
 public abstract class Pool {
 
 	private static final Logger LOG = LogManager.getLogger(Pool.class);
@@ -87,7 +90,7 @@ public abstract class Pool {
 			 * loadClass.getDeclaredConstructor().setAccessible(true);
 			 * loadClass.getDeclaredConstructor().newInstance();
 			 */
-			Constructor<?> constructor = Class.forName("com.insomnia.java.jdbc.Pool").getDeclaredConstructor();
+			Constructor<?> constructor = Class.forName("com.insomnia.java.design.jdbc.Pool").getDeclaredConstructor();
 			constructor.setAccessible(true);
 			instance = (Pool) constructor.newInstance();
 		}

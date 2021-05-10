@@ -1,15 +1,11 @@
 package com.insomnia.java;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
-import com.insomnia.java.jdbc.DBConnectionPool;
+import com.insomnia.java.design.jdbc.DBConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
-
-import com.insomnia.java.enmu.DBProvide;
-import com.insomnia.java.util.JDBCUtils;
 
 public class Main
 {
