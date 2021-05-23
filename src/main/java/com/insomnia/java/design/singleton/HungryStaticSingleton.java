@@ -1,5 +1,8 @@
 package com.insomnia.java.design.singleton;
 
+/**
+ * @author insomnia
+ */
 public class HungryStaticSingleton {
 
     private  static  final  HungryStaticSingleton HUNGRY_STATIC_SINGLETON;

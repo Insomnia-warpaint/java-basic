@@ -5,6 +5,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLOutput;
 
+/**
+ * @author insomnia
+ */
 public class LazyStaticInnerClassSingleton {
 
     /**
@@ -14,8 +17,9 @@ public class LazyStaticInnerClassSingleton {
 
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>> LazyStaticInnerClassSingleton 私有构造器");
 
-       if (null != LazyHolder.INSTANCE)
+       if (null != LazyHolder.INSTANCE) {
            throw  new RuntimeException("不允许创建多个实例!");
+       }
 
     }
 
@@ -25,8 +29,10 @@ public class LazyStaticInnerClassSingleton {
         return LazyHolder.INSTANCE;
     }
 
-    // 默认不加载内部类
-      private static class LazyHolder{
+    /**
+     * 默认不加载内部类
+     */
+    private static class LazyHolder{
         static {
             System.out.println(">>>>>>>>>>>>>>>>>>>>静态内部类的静态代码快 ");
         }

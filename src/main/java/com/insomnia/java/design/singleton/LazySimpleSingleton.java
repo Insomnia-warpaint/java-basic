@@ -1,5 +1,8 @@
 package com.insomnia.java.design.singleton;
 
+/**
+ * @author insomnia
+ */
 public class LazySimpleSingleton {
 
     private LazySimpleSingleton (){}

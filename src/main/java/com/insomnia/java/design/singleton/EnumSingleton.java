@@ -2,7 +2,14 @@ package com.insomnia.java.design.singleton;
 
 import javax.print.attribute.SetOfIntegerSyntax;
 
+/**
+ * @author insomnia
+ */
+
 public enum EnumSingleton {
+    /**
+     * instance
+     */
     INSTANCE;
 
     private Object o;

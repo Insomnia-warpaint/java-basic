@@ -10,8 +10,9 @@ public class LazyDoubleCheckSingleton {
 
         if (null == instance){
             synchronized (LazyDoubleCheckSingleton.class){
-                //if (null == instance)
-                instance = new LazyDoubleCheckSingleton();
+                if (null == instance) {
+                    instance = new LazyDoubleCheckSingleton();
+                }
             }
         }
         return instance;
