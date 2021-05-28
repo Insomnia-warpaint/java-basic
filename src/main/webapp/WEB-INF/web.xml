@@ -8,8 +8,7 @@
       		<servlet-class>com.insomnia.java.web.InsomniaServlet</servlet-class>
       	</servlet>
       	
-      	<servlet-mapping>
-      		<servlet-name>InsomniaServlet</servlet-name>
-      		<url-pattern>/</url-pattern>
-      	</servlet-mapping>
+	<listener>
+		<listener-class>com.insomnia.java.web.TimerListener</listener-class>
+	</listener>
 </web-app>
