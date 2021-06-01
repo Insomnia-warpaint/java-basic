@@ -20,7 +20,7 @@ public class MessageService {
         currentMap = new ConcurrentHashMap<>();
     }
 
-    public static void resertCount(){
+    public static void resetCount(){
 
         if (currentMap.containsKey(COUNT)){
             currentMap.replace(COUNT,BackSet.everyDayMessageCount);
